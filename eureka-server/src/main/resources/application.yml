@@ -1,0 +1,14 @@
+# 服务访问端口
+server:
+  port: 8761
+eureka:
+  client:
+    # 本身是注册中心，所以不用注册到eureka服务器
+    register-with-eureka: false
+    # 是否检索服务，由于本应用只是作为服务注册中心，不作为通信服务，所以false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:${server.port}}/eureka/
+  server:
+    # 本应用开发环境，不需要自我保护
+    enable-self-preservation: false

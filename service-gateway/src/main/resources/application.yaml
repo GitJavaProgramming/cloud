@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: gateway
+server:
+  port: 8083
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+# zuul.routes.*.path  拦截请求的路径，其中*表示分组标记，用于路由配置
+# zuul.routes.*.service-id  根据分组标记将拦截的请求转发到服务提供方
+zuul:
+  routes:
+    service-provider:
+      path: /service-provider/**
+      service-id: service-provider
+

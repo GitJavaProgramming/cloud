@@ -8,7 +8,7 @@ eureka:
     # 是否检索服务，由于本应用只是作为服务注册中心，不作为通信服务，所以false
     fetch-registry: false
     service-url:
-      defaultZone: http://localhost:${server.port}}/eureka/
+      defaultZone: http://localhost:${server.port}/eureka/
   server:
     # 本应用开发环境，不需要自我保护
     enable-self-preservation: false

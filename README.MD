@@ -11,5 +11,11 @@
     org.pp.serviceconsumer.SubstitutionController
     
     敏捷式为service-consumer集成feign ribbon hystrix等功能
-    
+
+# 分布式
+    会话
+    持久化
+    事务
+    通信
+   
     

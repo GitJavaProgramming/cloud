@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="service-consumer" />
         <module name="eureka-server" />
-        <module name="service-provider" />
+        <module name="service-consumer" />
         <module name="cloud" />
+        <module name="service-provider2" />
         <module name="service-gateway" />
+        <module name="service-provider" />
       </profile>
     </annotationProcessing>
   </component>
@@ -20,6 +21,7 @@
       <module name="service-consumer" options="-parameters" />
       <module name="service-gateway" options="-parameters" />
       <module name="service-provider" options="-parameters" />
+      <module name="service-provider2" options="-parameters" />
     </option>
   </component>
 </project>

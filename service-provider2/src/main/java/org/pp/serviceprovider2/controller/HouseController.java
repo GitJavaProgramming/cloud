@@ -1,4 +1,4 @@
-package org.pp.serviceprovider.controller;
+package org.pp.serviceprovider2.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +10,7 @@ public class HouseController {
 
     @GetMapping("/hello")
     public String hello() {
-        System.out.println("service-provider invoke...");
+        System.out.println("service-provider2 invoke...");
         return "hello";
     }
 }

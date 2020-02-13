@@ -1,0 +1,14 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: service-provider
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    metadata-map:
+      mymetadata: 我的自定义元素据

@@ -1,5 +1,6 @@
 server:
   port: 8082
+# spring 管理
 spring:
   application:
     name: service-consumer
@@ -7,6 +8,7 @@ spring:
     loadbalancer:
       retry:
         enabled: true
+# 注册中心
 eureka:
   client:
     register-with-eureka: true
@@ -14,6 +16,7 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
   instance:
     prefer-ip-address: true
+# 声明式客户端
 feign:
   compression:
     request:

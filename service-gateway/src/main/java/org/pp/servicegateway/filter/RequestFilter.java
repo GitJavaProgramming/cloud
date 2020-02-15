@@ -35,13 +35,14 @@ public class RequestFilter extends ZuulFilter {
 
     @Override
     public Object run() throws ZuulException {
-        RequestContext requestContext = RequestContext.getCurrentContext();
-        HttpServletRequest request = requestContext.getRequest();
+        RequestContext rcx = RequestContext.getCurrentContext();
+//        rcx.addZuulRequestHeader("auth", "token");
+        HttpServletRequest request = rcx.getRequest();
         System.out.println(String.format("%s AccessPasswordFilter request to %s", request.getMethod(), request.getRequestURL().toString()));
         String token = request.getParameter("token");
         if(token == null || !token.equals("1")) {
-            requestContext.setResponseBody("token error");
-            requestContext.setSendZuulResponse(false);
+            rcx.setResponseBody("token error");
+            rcx.setSendZuulResponse(false);
         }
         return null;
     }

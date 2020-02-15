@@ -1,0 +1,16 @@
+Index: README.MD
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- README.MD	(revision 8987bb112307db5fabfaadb280b1d278c4edae72)
++++ README.MD	(date 1581752248301)
+@@ -8,7 +8,7 @@
+         service-provider2（service-provider实例2 负载均衡测试用）
+         service-consumer（包含feign ribbon hystrix）
+ 
+-### 微服务测试
++#### 微服务测试
+     Controller
+     org.pp.serviceconsumer.SubstitutionController
+     

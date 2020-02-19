@@ -22,7 +22,9 @@ eureka:
 # zuul.routes.*.service-id  根据分组标记将拦截的请求转发到服务提供方
 zuul:
   routes:
-    service-provider:
-      path: /service-provider/**
+    house:
+      path: /house/**
       service-id: service-provider
-
+    substitution:
+      path: /substitution/**
+      service-id: service-consumer

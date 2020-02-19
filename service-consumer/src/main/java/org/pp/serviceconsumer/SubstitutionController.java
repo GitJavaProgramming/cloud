@@ -1,22 +1,18 @@
 package org.pp.serviceconsumer;
 
-import com.netflix.discovery.converters.Auto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @RestController
+//@Controller
 @RequestMapping("/substitution")
 public class SubstitutionController {
 
@@ -53,6 +49,12 @@ public class SubstitutionController {
 
     @GetMapping("/callHello2")
     public String callHello2() {
+        return serviceProviderFeignClient.hello();
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/callHello3")
+    public String callHello3(@RequestParam(value="username")String username) {
+        System.out.println(username + "=<==");
         return serviceProviderFeignClient.hello();
     }
 }

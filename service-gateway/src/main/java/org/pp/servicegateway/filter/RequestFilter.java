@@ -20,7 +20,7 @@ public class RequestFilter extends ZuulFilter {
      */
     @Override
     public String filterType() {
-        return "pre";
+        return "post"; //更改试试
     }
 
     @Override
@@ -39,11 +39,21 @@ public class RequestFilter extends ZuulFilter {
 //        rcx.addZuulRequestHeader("auth", "token");
         HttpServletRequest request = rcx.getRequest();
         System.out.println(String.format("%s AccessPasswordFilter request to %s", request.getMethod(), request.getRequestURL().toString()));
-        String token = request.getParameter("token");
-        if(token == null || !token.equals("1")) {
+        String username = request.getParameter("username");
+        String token = getToken(username); // get token
+        if(token == null || !token.equals("pp")) {
             rcx.setResponseBody("token error");
             rcx.setSendZuulResponse(false);
+        } else {
+            rcx.setSendZuulResponse(true);
+            rcx.setResponseBody("过滤了");
+//            rcx.addZuulRequestHeader("auth", token);
         }
         return null;
+    }
+
+    private String getToken(String username) {
+        String token = username; // get token
+        return token;
     }
 }

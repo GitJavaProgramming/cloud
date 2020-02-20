@@ -16,6 +16,8 @@ eureka:
     register-with-eureka: true
     service-url:
       defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enabled: true
   instance:
     prefer-ip-address: true
 # zuul.routes.*.path  拦截请求的路径，其中*表示分组标记，用于路由配置
@@ -28,3 +30,21 @@ zuul:
     substitution:
       path: /substitution/**
       service-id: service-consumer
+management:
+  #actuator端口
+  server:
+    port: 9001
+  #修改访问路径  2.0之前默认是/   2.0默认是 /actuator  可以通过这个属性值修改
+  endpoints:
+    web:
+      base-path: /actuator
+      #开放所有页面节点  默认只开启了health、info两个节点
+      exposure:
+        include: "*"
+    #显示健康具体信息  默认不会显示详细信息
+  endpoint:
+    health:
+      show-details: always
+logging:
+  level:
+    root: DEBUG

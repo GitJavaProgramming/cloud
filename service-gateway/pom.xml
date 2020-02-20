@@ -15,6 +15,11 @@
     <description>service-gateway微服务网关</description>
 
     <dependencies>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${joda-time.version}</version>
+        </dependency>
         <!-- JWT统一认证 -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>

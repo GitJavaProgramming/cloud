@@ -17,6 +17,7 @@
     <bytecodeTargetLevel>
       <module name="common" target="1.8" />
       <module name="commons" target="1.8" />
+      <module name="service-consumer2" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -26,6 +27,7 @@
       <module name="commons" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="service-consumer" options="-parameters" />
+      <module name="service-consumer2" options="-parameters" />
       <module name="service-gateway" options="-parameters" />
       <module name="service-provider" options="-parameters" />
       <module name="service-provider2" options="-parameters" />

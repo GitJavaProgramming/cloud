@@ -34,3 +34,6 @@ feign:
         readTimeout: 10000
   hystrix:
     enabled: true
+ribbon:
+  eureka:
+    enabled: true

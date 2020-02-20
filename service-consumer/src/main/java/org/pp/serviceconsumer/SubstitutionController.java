@@ -52,9 +52,9 @@ public class SubstitutionController {
         return serviceProviderFeignClient.hello();
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/callHello3")
-    public String callHello3(@RequestParam(value="username")String username) {
-        System.out.println(username + "=<==");
-        return serviceProviderFeignClient.hello();
-    }
+//    @RequestMapping(method = RequestMethod.GET, value = "/callHello3")
+//    public String callHello3(@RequestParam(value="username")String username) {
+//        System.out.println(username + "=<==");
+//        return serviceProviderFeignClient.hello();
+//    }
 }

@@ -3,6 +3,8 @@ package org.pp.servicegateway.filter;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
+import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -20,12 +22,12 @@ public class RequestFilter extends ZuulFilter {
      */
     @Override
     public String filterType() {
-        return "post"; //更改试试
+        return FilterConstants.PRE_TYPE; //更改试试
     }
 
     @Override
     public int filterOrder() {
-        return 0; //过滤器执行顺序
+        return 110; //过滤器执行顺序
     }
 
     @Override
@@ -36,19 +38,19 @@ public class RequestFilter extends ZuulFilter {
     @Override
     public Object run() throws ZuulException {
         RequestContext rcx = RequestContext.getCurrentContext();
-//        rcx.addZuulRequestHeader("auth", "token");
-        HttpServletRequest request = rcx.getRequest();
-        System.out.println(String.format("%s AccessPasswordFilter request to %s", request.getMethod(), request.getRequestURL().toString()));
-        String username = request.getParameter("username");
-        String token = getToken(username); // get token
-        if(token == null || !token.equals("pp")) {
-            rcx.setResponseBody("token error");
-            rcx.setSendZuulResponse(false);
-        } else {
-            rcx.setSendZuulResponse(true);
-            rcx.setResponseBody("过滤了");
-//            rcx.addZuulRequestHeader("auth", token);
-        }
+        rcx.addZuulRequestHeader("auth", "token");
+//        HttpServletRequest request = rcx.getRequest();
+//        System.out.println(String.format("%s AccessPasswordFilter request to %s", request.getMethod(), request.getRequestURL().toString()));
+//        String username = request.getParameter("username");
+//        String token = getToken(username); // get token
+//        if(token == null || !token.equals("pp")) {
+//            rcx.setResponseBody("token error");
+//            rcx.setSendZuulResponse(false);
+//        } else {
+//            rcx.setSendZuulResponse(true);
+//            rcx.setResponseBody("过滤了");
+////            rcx.addZuulRequestHeader("auth", token);
+//        }
         return null;
     }
 

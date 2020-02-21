@@ -1,5 +1,6 @@
-package org.pp.consumer02;
+package org.pp.consumer02.hystrix;
 
+import org.pp.consumer02.ServiceProviderFeignClient;
 import org.springframework.stereotype.Component;
 
 @Component

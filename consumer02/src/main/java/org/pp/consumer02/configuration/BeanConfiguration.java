@@ -13,4 +13,9 @@ public class BeanConfiguration {
     public RestTemplate getRestTemplate() {
         return new RestTemplate();
     }
+
+    @Bean
+    public FeignRequestInterceptor getFeignRequestInterceptor() {
+        return new FeignRequestInterceptor();
+    }
 }

@@ -30,7 +30,7 @@ public class SubstitutionController {
     private LoadBalancerClient loadBalancerClient;
 
     @Autowired
-    private ServiceProviderFeignClient serviceProviderFeignClient; // idea下编译报错
+    private ServiceProviderFeignClient serviceProviderFeignClient;
 
     @GetMapping("/callHello")
     public String callHello() {

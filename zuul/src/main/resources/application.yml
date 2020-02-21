@@ -46,4 +46,13 @@ management:
       show-details: always
 logging:
   level:
-    root: DEBUG
+    root: info
+# 参考https://blog.csdn.net/weixin_41758046/article/details/88902073
+# 禁用ribbon缓存，每次查找都从注册中心找
+#ribbon:
+#  eureka:
+#    enabled: false
+# zuul实现了熔断处理
+#hystrix:
+#  metrics:
+#    enabled: false

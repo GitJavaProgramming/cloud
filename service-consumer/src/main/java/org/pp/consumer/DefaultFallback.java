@@ -1,4 +1,4 @@
-package org.pp.serviceconsumer;
+package org.pp.consumer;
 
 //@Component
 public class DefaultFallback /*implements FallbackFactory<ServiceProviderFeignClient>*/ {

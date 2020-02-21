@@ -11,6 +11,7 @@
         <module name="service-consumer" />
         <module name="service-provider2" />
         <module name="service-gateway" />
+        <module name="consumer02" />
         <module name="service-provider" />
       </profile>
     </annotationProcessing>
@@ -25,6 +26,7 @@
       <module name="cloud" options="-parameters" />
       <module name="common" options="-parameters" />
       <module name="commons" options="-parameters" />
+      <module name="consumer02" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="service-consumer" options="-parameters" />
       <module name="service-consumer2" options="-parameters" />

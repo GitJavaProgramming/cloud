@@ -1,0 +1,31 @@
+server:
+  port: 8086
+# spring 管理
+spring:
+  application:
+    name: service-consumer
+#  cloud:
+#    loadbalancer:
+#      retry:
+#        enabled: true
+# 注册中心
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+  instance:
+    prefer-ip-address: true
+# 声明式客户端
+feign:
+  compression:
+    request:
+      enabled: true
+      mime-types: text/html,application/html,application/json
+      min-request-size: 2048
+    response:
+      enabled: true
+#  hystrix:
+#    enabled: true

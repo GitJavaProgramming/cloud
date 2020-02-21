@@ -1,4 +1,4 @@
-package org.pp.serviceconsumer;
+package org.pp.consumer02.configuration;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
@@ -12,10 +12,5 @@ public class BeanConfiguration {
     @LoadBalanced
     public RestTemplate getRestTemplate() {
         return new RestTemplate();
-    }
-
-    @Bean
-    public FeignRequestInterceptor getFeignRequestInterceptor() {
-        return new FeignRequestInterceptor();
     }
 }

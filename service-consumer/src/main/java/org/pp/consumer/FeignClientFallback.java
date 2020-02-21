@@ -1,4 +1,4 @@
-package org.pp.serviceconsumer;
+package org.pp.consumer;
 
 import org.springframework.stereotype.Component;
 

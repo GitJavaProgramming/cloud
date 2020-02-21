@@ -1,4 +1,4 @@
-package org.pp.serviceconsumer;
+package org.pp.consumer;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;

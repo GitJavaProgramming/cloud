@@ -1,6 +1,7 @@
 spring:
   application:
     name: gateway
+  # 加上这个配置 否则zuul启动会有警告信息 查看启动日志
   cloud:
     loadbalancer:
       ribbon:
@@ -10,10 +11,12 @@ server:
 eureka:
   client:
     register-with-eureka: true
+    fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka/
     healthcheck:
       enabled: true
+#    registry-fetch-interval-seconds: 30
   instance:
     prefer-ip-address: true
 # zuul.routes.*.path  拦截请求的路径，其中*表示分组标记，用于路由配置

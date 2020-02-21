@@ -22,13 +22,17 @@ eureka:
 # zuul.routes.*.path  拦截请求的路径，其中*表示分组标记，用于路由配置
 # zuul.routes.*.service-id  根据分组标记将拦截的请求转发到服务提供方
 zuul:
+  # Zuul 会把代理的前缀给移除掉，如果不想被移除掉，可以使用 stripPrefix=false 来取消
+  prefix: /api
   routes:
     house:
       path: /house/**
       service-id: service-provider
+      stripPrefix: false
     substitution:
       path: /substitution/**
       service-id: service-consumer
+      stripPrefix: false
 management:
   #actuator端口
   server:
